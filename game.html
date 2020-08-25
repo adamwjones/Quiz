@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sopranos Quiz - Game</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+
+        <div id="game" class="flex-column">
+
+          <!--Timer Section -->
+          <div id="scoreboard">
+            <div id="timer">
+              <div id="timer-item">
+                <p class="timer-prefix">Timer</p>
+                <h1 class="timer-main-text" id="timerCount">0</h1>
+              </div>
+            </div>
+            
+            <!--Score Section -->
+            <div id="scoreboard-item">
+              <p class="scoreboard-prefix">Score</p>
+              <h1 class="scoreboard-main-text" id="score">0</h1>
+            </div>
+          </div>
+        </div>
+
+        <!--Question Section-->
+        <h2 id="question">You talk'en to me?</h2>
+          <div class="option-container">
+            <p class="option-prefix">A</p>
+            <p class="option-text" data-number="1">Option 1</p>
+          </div>
+          <div class="option-container">
+            <p class="option-prefix">B</p>
+            <p class="option-text" data-number="2">Option 2</p>
+          </div>
+          <div class="option-container">
+            <p class="option-prefix">C</p>
+            <p class="option-text" data-number="3">Option 3</p>
+          </div>
+          <div class="option-container">
+            <p class="option-prefix">D</p>
+            <p class="option-text" data-number="4">Option 4</p>
+          </div>
+      </div>
+    </div>
+    <script src="assets/js/game.js"></script>
+  </body>
+</html>
