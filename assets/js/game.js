@@ -1,20 +1,20 @@
 // Timer variables
 var timerElement = document.getElementById("timerCount");
 var timerInterval;
-var timerCount = 60;
+var timeCount = 60;
 
 // Score variables
-var scoreText = document.getElementById("score");
+var scoreDisplay = document.getElementById("score");
 var score = 0;
 
 // Questions & Answers variables
 var question = document.getElementById("question");
-var currentQuestion = {};
-var availableQuesions = [];
-var questionCounter = 0;
-var totalQuestions = 3;
+var currentQ = {};
+var availableQs = [];
+var count = 0;
+var totalQs = 3;
 var options = Array.from(document.getElementsByClassName("option-text"));
-var acceptingAnswers = false;
+var newAnswers = false;
 var correctAnswer = 10;
 
 // Questions
@@ -47,78 +47,78 @@ var questions = [
 ];
 
 //Start game function
-startGame = () => {
-  questionCounter = 0;
+startQuiz = () => {
+  count = 0;
   score = 0;
   timerInterval = setInterval(timer, 1000);
-  availableQuesions = [...questions];
-  getNewQuestion();
+  availableQs = [...questions];
+  getQuestion();
 };
 
 //Timer function
 timer = () => {
-  timerCount--;
-  if (timerCount === 0) {
+  timeCount--;
+  if (timeCount === 0) {
     clearInterval(timerInterval);
     localStorage.setItem("mostRecentScore", score);
     return window.location.assign("end.html");
   } else {
-    timerElement.textContent = timerCount;
+    timerElement.textContent = timeCount;
   }
 };
 
 //Get new question function 
-getNewQuestion = () => {
-  if (availableQuesions.length === 0 || questionCounter >= totalQuestions) {
+getQuestion = () => {
+  if (availableQs.length === 0 || count >= totalQs) {
     clearInterval(timerInterval);
     localStorage.setItem("mostRecentScore", score);
     return window.location.assign("end.html");
   }
-  questionCounter++;
+  count++;
 
-  const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-  currentQuestion = availableQuesions[questionIndex];
-  question.innerText = currentQuestion.question;
+  const questionIndex = Math.floor(Math.random() * availableQs.length);
+  currentQ = availableQs[questionIndex];
+  question.innerText = currentQ.question;
 
   options.forEach(option => {
     const number = option.dataset["number"];
-    option.innerText = currentQuestion["option" + number];
+    option.innerText = currentQ["option" + number];
   });
 
-  availableQuesions.splice(questionIndex, 1);
-  acceptingAnswers = true;
+  availableQs.splice(questionIndex, 1);
+  newAnswers = true;
 };
 
 options.forEach(option => {
   option.addEventListener("click", e => {
-    if (!acceptingAnswers) return;
+    if (!newAnswers) return;
 
-    acceptingAnswers = false;
+    newAnswers = false;
     const selectedOption = e.target;
     const selectedAnswer = selectedOption.dataset["number"];
 
     const classToApply =
-      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+      selectedAnswer == currentQ.answer ? "correct" : "incorrect";
 
     if (classToApply === "correct") {
-      timerCount = timerCount + 10;
-      incrementScore(correctAnswer);
+      timeCount = timeCount + 10;
+      addPoints(correctAnswer);
     } else {
-      timerCount = timerCount - 10;
+      timeCount = timeCount - 10;
     }
 
     selectedOption.parentElement.classList.add(classToApply);
 
     setTimeout(() => {
       selectedOption.parentElement.classList.remove(classToApply);
-      getNewQuestion();
+      getQuestion();
     }, 1000);
   });
 });
 
-incrementScore = num => {
+addPoints = num => {
   score += num;
-  scoreText.innerText = score;
+  scoreDisplay.innerText = score;
 };
 
-startGame();
+startQuiz();

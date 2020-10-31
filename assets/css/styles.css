@@ -1,14 +1,12 @@
-/* GLOBAL STYLE */
-
 :root {
 	background-color: #121212;
-	font-size: 65%;
-	display: 80%;
+	font-size: 64%;
+	display: 82%;
 }
 
 * {
 	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Mobsters, Helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
 	color: #ffffff;
@@ -19,36 +17,36 @@ h1, h2 {
 }
 
 h1 {
-	font-size: 5.4rem;
-	color: #ffffff;
 	margin-bottom: 5rem;
+	font-size: 5.5rem;
+	color: #ffffff;
 }
 
 h1>span {
-	font-size: 2.4rem;
-	font-weight: 500;
+	font-size: 2.3rem;
+	font-weight: 501;
 }
 
 h2 {
-	font-size: 4.2rem;
-	margin-bottom: 4rem;
-	font-weight: 700;
+	margin-bottom: 4.1rem;
+	font-size: 4.3rem;
+	font-weight: 701;
 }
 
 /* CONTAINER */
 
 .container {
-	width: 100vw;
-	height: 100vh;
+	width: 101vw;
+	height: 101vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 80rem;
-	margin: 0 auto;
+	max-width: 81rem;
+	margin: 1 auto;
 }
 
 .container>* {
-	width: 80%;
+	width: 85%;
 }
 
 .flex-column {
@@ -61,18 +59,14 @@ h2 {
 	align-items: center;
 }
 
-.hidden {
-	display: none;
-}
-
 /* BUTTONS */
 
 .btn {
-	font-size: 1.8rem;
-	padding: 1rem 0;
+	font-size: 1.7rem;
+	padding: 1.1rem 0;
 	width: 20rem;
 	text-align: center;
-	border: 0.1rem solid #FF7043;
+	border: 0.2rem solid #d40505;
 	margin-bottom: 1rem;
 	text-decoration: none;
 	color: #ffffff;
@@ -81,13 +75,12 @@ h2 {
 
 .btn:hover {
 	cursor: pointer;
-	box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 122, 67, 0.5);
+	box-shadow: 0 0.4rem 1.4rem 0 #d40505;
 	transform: translateY(-0.1rem);
-	transition: transform 150ms;
+	transition: transform 130ms;
 }
 
 .btn[disabled]:hover {
-	cursor: not-allowed;
 	box-shadow: none;
 	transform: none;
 }
@@ -108,11 +101,11 @@ input {
 	padding: 1.5rem;
 	font-size: 1.8rem;
 	border: none;
-	box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+	box-shadow: 0 0.1rem 1.4rem 0 rgba(55, 176, 236, 0.5);
 }
 
 input::placeholder {
-	color: #aaa;
+	color: rgb(216, 212, 212);
 }
 
 /* GAME */
@@ -122,20 +115,20 @@ input::placeholder {
 	margin-bottom: 0.5rem;
 	width: 100%;
 	font-size: 1.8rem;
-	border: 0.1rem solid rgb(255, 122, 67, 0.25);
+	border: 0.1rem solid #d40505;
 	background-color: #1f1b24;
 }
 
 .option-container:hover {
 	cursor: pointer;
-	box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 122, 67, 0.5);
+	box-shadow: 0 0.4rem 1.4rem 0 #d40505;
 	transform: translateY(-0.1rem);
 	transition: transform 150ms;
 }
 
 .option-prefix {
 	padding: 1.5rem 2.5rem;
-	background-color: #FF7043;
+	background-color: #ff4343;
 	color: white;
 }
 
@@ -149,7 +142,7 @@ input::placeholder {
 }
 
 .incorrect {
-	background-color: #dc3545;
+	background-color: #ff4343;
 }
 
 /* scoreboard */
@@ -161,7 +154,7 @@ input::placeholder {
 
 .scoreboard-prefix {
 	text-align: center;
-	font-size: 2rem;
+	font-size: 4rem;
 }
 
 .scoreboard-main-text {
@@ -177,7 +170,7 @@ input::placeholder {
 
 .timer-prefix {
 	text-align: center;
-	font-size: 2rem;
+	font-size: 4rem;
 }
 
 .timer-main-text {
@@ -189,7 +182,7 @@ input::placeholder {
 #highScoresList {
 	list-style: none;
 	padding-left: 0;
-	margin-bottom: 4rem;
+	margin-bottom: 5rem;
 }
 
 .high-score {
@@ -197,6 +190,3 @@ input::placeholder {
 	margin-bottom: 0.5rem;
 }
 
-.high-score:hover {
-	transform: scale(1.025);
-}
