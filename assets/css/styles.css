@@ -1,7 +1,9 @@
+/* GLOBAL STYLE */
+
 :root {
 	background-color: #121212;
-	font-size: 64%;
-	display: 82%;
+	font-size: 65%;
+	display: 80%;
 }
 
 * {
@@ -18,35 +20,35 @@ h1, h2 {
 
 h1 {
 	margin-bottom: 5rem;
-	font-size: 5.5rem;
+	font-size: 5.4rem;
 	color: #ffffff;
 }
 
 h1>span {
-	font-size: 2.3rem;
-	font-weight: 501;
+	font-size: 2.4rem;
+	font-weight: 500;
 }
 
 h2 {
-	margin-bottom: 4.1rem;
-	font-size: 4.3rem;
-	font-weight: 701;
+	margin-bottom: 4rem;
+	font-size: 4.2rem;
+	font-weight: 700;
 }
 
 /* CONTAINER */
 
 .container {
-	width: 101vw;
-	height: 101vh;
+	width: 100vw;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 81rem;
-	margin: 1 auto;
+	max-width: 80rem;
+	margin: 0 auto;
 }
 
 .container>* {
-	width: 85%;
+	width: 80%;
 }
 
 .flex-column {
@@ -62,11 +64,11 @@ h2 {
 /* BUTTONS */
 
 .btn {
-	font-size: 1.7rem;
-	padding: 1.1rem 0;
+	font-size: 1.8rem;
+	padding: 1rem 0;
 	width: 20rem;
 	text-align: center;
-	border: 0.2rem solid #d40505;
+	border: 0.1rem solid #d40505;
 	margin-bottom: 1rem;
 	text-decoration: none;
 	color: #ffffff;
@@ -154,7 +156,7 @@ input::placeholder {
 
 .scoreboard-prefix {
 	text-align: center;
-	font-size: 4rem;
+	font-size: 2rem;
 }
 
 .scoreboard-main-text {
@@ -170,7 +172,7 @@ input::placeholder {
 
 .timer-prefix {
 	text-align: center;
-	font-size: 4rem;
+	font-size: 2rem;
 }
 
 .timer-main-text {
@@ -182,7 +184,7 @@ input::placeholder {
 #highScoresList {
 	list-style: none;
 	padding-left: 0;
-	margin-bottom: 5rem;
+	margin-bottom: 4rem;
 }
 
 .high-score {
